@@ -1,0 +1,10 @@
+name: Terraform PR Check
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pr_check:
+    name: Terraform PR Check
+    uses: crushten/github_workflow_repo/.github/workflows/terraform_pr_check.yml@main

@@ -1,0 +1,22 @@
+name: Terraform CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    name: Terraform Lint
+    uses: crushten/github_workflow_repo/.github/workflows/terraform_lint.yml@main
+  
+  test:
+    name: Terraform Test
+    needs: lint
+    uses: crushten/github_workflow_repo/.github/workflows/terraform_test.yml@main
+
+  scan:
+    name: Terraform Scan
+    needs: test
+    uses: crushten/github_workflow_repo/.github/workflows/terraform_scan.yml@main
