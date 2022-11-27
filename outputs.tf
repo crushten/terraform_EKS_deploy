@@ -26,5 +26,5 @@ output "cluster_name" {
 
 output "load_balancer_hostname" {
   description = "Kubernetes application hostname"
-  value       = kubernetes_service.go.status.0.load_balancer.0.ingress.0.hostname
+  value       = kubernetes_service.go.status[0].load_balancer[0].ingress[0].hostname
 }
