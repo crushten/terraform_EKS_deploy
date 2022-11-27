@@ -2,17 +2,17 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "4.23.0"
+      version = "4.41.0"
     }
 
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = "2.12.1"
+      version = "2.16.0"
     }
 
     docker = {
       source  = "kreuzwerker/docker"
-      version = "2.20.0"
+      version = "2.23.1"
     }
 
     local = {
@@ -22,17 +22,12 @@ terraform {
 
     null = {
       source  = "hashicorp/null"
-      version = "3.1.1"
+      version = "3.2.1"
     }
 
     random = {
       source  = "hashicorp/random"
-      version = "3.3.2"
-    }
-
-    tls = {
-      source  = "hashicorp/tls"
-      version = "~> 3.0"
+      version = "3.4.3"
     }
   }
 

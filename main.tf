@@ -3,7 +3,7 @@ module "eks" {
   version = "18.26.6"
 
   cluster_name    = local.cluster_name
-  cluster_version = "1.22" // 1.23 is due August 2022 1.24 isnt avaible yet see https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html#version-deprecation
+  cluster_version = "1.24"
 
   subnet_ids = module.vpc.private_subnets
   vpc_id     = module.vpc.vpc_id
@@ -15,6 +15,8 @@ module "eks" {
 
     create_launch_template = false
     launch_template_name   = ""
+
+    enabled_cluster_log_types = ["api", "authenticator", "audit", "scheduler", "controllerManager"]
   }
 
   eks_managed_node_groups = {

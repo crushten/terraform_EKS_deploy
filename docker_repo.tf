@@ -1,3 +1,6 @@
+resource "aws_kms_key" "ecr_kms" {
+  enable_key_rotation = true
+}
 resource "aws_ecr_repository" "go-repository" {
   name                 = "go-repo"
   image_tag_mutability = "IMMUTABLE"
@@ -9,6 +12,7 @@ resource "aws_ecr_repository" "go-repository" {
 
   encryption_configuration {
     encryption_type = "KMS"
+    kms_key         = aws_kms_key.ecr_kms.key_id
   }
 }
 
