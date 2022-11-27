@@ -5,6 +5,11 @@ terraform {
       version = "4.41.0"
     }
 
+    cloudinit = {
+      source  = "hashicorp/cloudinit"
+      version = "2.2.0"
+    }
+
     kubernetes = {
       source  = "hashicorp/kubernetes"
       version = "2.16.0"
