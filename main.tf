@@ -1,6 +1,6 @@
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "18.26.6"
+  version = "18.31.2"
 
   cluster_name    = local.cluster_name
   cluster_version = "1.24"
@@ -17,6 +17,8 @@ module "eks" {
     launch_template_name   = ""
 
     enabled_cluster_log_types = ["api", "authenticator", "audit", "scheduler", "controllerManager"]
+
+    endpoint_public_access = false
   }
 
   eks_managed_node_groups = {
