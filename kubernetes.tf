@@ -36,7 +36,7 @@ resource "kubernetes_deployment" "go" {
           }
         } //pod security context
         container {
-          image = "${aws_ecr_repository.go-repository.repository_url}:latest"
+          image = local.container_url
           name  = "go-endpoint-cloud-container"
           security_context {
           } //container security context

@@ -1,5 +1,5 @@
 locals {
-  aws_ecr_url = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.region}.amazonaws.com"
+  container_url = "ghcr.io/crushten/go_endpoint_cloud:v0.2.0-amd64"
 
   cluster_name = "demo-eks-${random_string.suffix.result}"
 
